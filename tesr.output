@@ -1,0 +1,13 @@
+[2025-01-08 12:42:01.010382] [0x00007efea824de80] [info]    RLA2
+[2025-01-08 12:42:01.014346] [0x00007efea824de80] [info]    [31mComplete Linkage has been disabled[0m
+[2025-01-08 12:42:01.014370] [0x00007efea824de80] [info]    Command line invoked : rla2 /home/shah/recordlinkage/RLA2-Soundex_DM/config.xml
+[2025-01-08 12:42:01.015851] [0x00007efea824de80] [info]    Reading dataset file          : /home/shah/recordlinkage/RLA2-Soundex_DM/InputData/ds1.1.1.txt
+[2025-01-08 12:42:01.070471] [0x00007efea824de80] [info]    Reading dataset file          : /home/shah/recordlinkage/RLA2-Soundex_DM/InputData/ds1.1.2.txt
+[2025-01-08 12:42:01.111898] [0x00007efea824de80] [info]    Number of records read        : 50,000
+[2025-01-08 12:42:01.111933] [0x00007efea824de80] [info]    Threshold value               : 1
+[2025-01-08 12:42:01.111967] [0x00007efea824de80] [info]     Local Threshold Index(es)    : 1	2	3	4	
+[2025-01-08 12:42:01.111971] [0x00007efea824de80] [info]     Local Threshold Values       : 1	1	1	1	
+[2025-01-08 12:42:01.111976] [0x00007efea824de80] [info]    Clustering started .......
+[2025-01-08 12:42:01.203207] [0x00007efea824de80] [info]    Number of exact clusters      : 19,995
+[2025-01-08 12:42:01.235892] [0x00007efea824de80] [info]    Valid entity pairs |E|        : 100,000
+[2025-01-08 12:42:01.247994] [0x00007efea824de80] [info]     prepare matching done in  0.0s wall, 0.0s cpu

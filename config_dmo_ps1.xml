@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rla-config>
+    <!-- datasets definition start -->
+    <globalindex>
+        <value>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</value>
+    </globalindex>
+    <weights>
+        <value>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</value>
+    </weights>
+    <dataset name="dataset1"  id="1">
+        <value>/home/shah/recordlinkage/rla_cl_exact/rla_cl_exact/InputData/pseudopeople data/Census_2020_noConfig_MI.csv</value>
+        <dataset_index>
+            <value>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</value>
+        </dataset_index>
+    </dataset>
+    <dataset name="dataset2"  id="2">
+        <value>/home/shah/recordlinkage/rla_cl_exact/rla_cl_exact/InputData/pseudopeople data/Census_2020_PhoneticError_MI.csv</value>
+        <dataset_index>
+            <value>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</value>
+        </dataset_index>
+    </dataset>
+
+    <!--
+    The blocking-stages tag below configures one or more blocking stages.
+    Each blocking stage applies a specific blocking technique.
+    The supported blocking techniques are described below along with their
+    associated parameters.
+    
+    K-mer blocking:
+    
+    For K-mer based blocking, use the <kmer-blocking> tag.
+    The associated parameters are as follows:
+        <index> constitutes one or more index(es) for the blocking field(s).
+        <kmer> the kmer blocking value(s).
+        <type> the data type of the blocking field which is one of the following options:
+            0 for Alphabet only fields.
+            1 for Numeric only fields.
+            2 for Alphanumeric fields.
+            3 for ASCII fields.
+    
+    Multi blocking:
+    
+    
+    -->
+    <blocking-stages id="BlockingStage1">
+        <doublemetaphone-blocking>
+            <field>
+                <index>2</index>
+                <length>4</length>
+            </field>
+        </doublemetaphone-blocking>
+        <doublemetaphone-blocking>
+            <field>
+                <index>4</index>
+                <length>4</length>
+            </field>
+        </doublemetaphone-blocking>
+    </blocking-stages>
+
+    <version-config-param id="ComparisonGroup">
+
+        <comparison id="first name">
+            <!-- comparison method:
+            1-edit distance   2-reversal distance   3-truncation distance   4-nickname distance -->
+
+            <dist_calc_method>
+                <value>1</value>
+            </dist_calc_method>
+            <comparing_attribute_indices id="1">
+                <value>2</value>
+            </comparing_attribute_indices>
+            <threshold>
+                <value>1</value>
+            </threshold>
+        </comparison>
+
+        <comparison id="last name">
+            <!-- comparison method: 1-edit distance   2-reversal distance   3-truncation distance   4-nickname distance -->
+            <dist_calc_method>
+                <value>1</value>
+            </dist_calc_method>
+            <comparing_attribute_indices id="1">
+                <value>4</value>
+            </comparing_attribute_indices>
+            <threshold>
+                <value>1</value>
+            </threshold>
+        </comparison>
+
+       <comparison id="dob">
+            <!-- comparison method: 1-edit distance   2-reversal distance   3-truncation distance   4-nickname distance -->
+            <dist_calc_method>
+                <value>1</value>
+            </dist_calc_method>
+            <comparing_attribute_indices id="1">
+                <value>6</value>
+            </comparing_attribute_indices>
+            <threshold>
+                <value>2</value>
+            </threshold>
+        </comparison>
+
+        <!-- threshold --> 
+        <threshold>
+            <value>1</value>
+        </threshold>
+
+        <!-- priority fields -->
+        <priority>
+            <value>2</value> <!-- SSN, DOB, SASID -->
+        </priority>
+
+        <output_function id="1">
+            <!-- Function type: 1-records across more than a certain number of data files -->
+
+            <output_filename>
+                <value>ps</value>
+            </output_filename>
+        </output_function>
+
+        <results_logging>
+            <!-- file name for logging experimental results-->
+            <filename>
+                <!-- if not set the default value of log.csv is used instead -->
+                <value>ps_results.csv</value>
+            </filename>
+        </results_logging>
+
+    </version-config-param>
+    <!-- Record linkage configuration parameter set1 end -->
+    <!-- Record linkage configuration parameter sets end -->
+</rla-config>
